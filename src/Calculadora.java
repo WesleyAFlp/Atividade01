@@ -7,7 +7,7 @@ public class Calculadora {
         float num1 = sc.nextFloat();
         System.out.println("Digite o segundo número: ");
         float num2 = sc.nextFloat();
-        System.out.println("Digite a operação desejada:\n1 - Soma\n2 - Subtração\n3 - Multiplicação\n4 - Divisão\n ");
+        System.out.println("Digite a operação desejada:\n1 - Soma\n2 - Subtração\n3 - Multiplicação\n4 - Divisão ");
         int op = sc.nextInt();
         switch(op) {
             case 1:
@@ -20,9 +20,14 @@ public class Calculadora {
                 float multiplicacao = num1 * num2;
                 System.out.println("Multiplicação: " + multiplicacao); break;
             default:
-                float divisao = num1 / num2;
-                System.out.println("Divisão: " + divisao); break;
+                if(num2 == 0){
+                    System.out.println("Não é possível dividir um número por 0!");
+                }else{
+                    float divisao = num1 / num2;
+                    System.out.println("Divisão: " + divisao); break;
+                }
 
         }
+        sc.close();
     }
 }
